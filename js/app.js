@@ -328,3 +328,11 @@ botonIngresar.addEventListener("click",function(){
         document.getElementById("camara").style.display ="none";
         document.getElementById("ingreso").style.display ="block";
     }
+
+    if('serviceWorker' in navigator){
+        window.addEventListener('load', () =>{
+            navigator.serviceWorker.register('../sw.js').then( () =>{
+                console.log('Service Worker Registered')
+            });
+        });
+    }
